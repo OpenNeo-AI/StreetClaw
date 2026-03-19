@@ -39,6 +39,10 @@
   .stat-label { font-size: 13px; color: #8888aa; margin-top: 6px; }
   .highlight-box { background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(255,165,0,0.05)); border-left: 4px solid #ffa500; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 20px 0; }
   .highlight-box p { color: #c8c8e8; font-size: 15px; line-height: 1.8; }
+  .highlight-box strong { color: #ffa070; }
+  .cta-box { background: linear-gradient(135deg, #ff6b35, #cc4420); border-radius: 16px; padding: 30px; text-align: center; margin: 30px 0; }
+  .cta-box h3 { font-size: 22px; color: #fff; margin-bottom: 12px; }
+  .cta-box p { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.7; }
   .footer { text-align: center; padding: 40px 20px; color: #666688; font-size: 13px; border-top: 1px solid rgba(255,165,0,0.1); margin-top: 60px; }
   @media (max-width: 600px) {
     .hero h1 { font-size: 32px; }
@@ -54,10 +58,10 @@
   <p class="subtitle">AI · 逛街搭子 · 你的专属血拼战友</p>
   <div class="tag-row">
     <span class="tag">飞书接入</span>
+    <span class="tag">线下消费赋能</span>
     <span class="tag">情绪价值</span>
     <span class="tag">砍价助攻</span>
     <span class="tag">指路搭子</span>
-    <span class="tag">购物参谋</span>
   </div>
   <div style="margin-top:28px;">
     <img src="assets/poster-competition.png" alt="虾逛宣传海报" style="max-width:360px;width:100%;border-radius:16px;border:2px solid rgba(255,165,0,0.4);box-shadow:0 8px 32px rgba(0,0,0,0.6);" />
@@ -65,6 +69,20 @@
 </div>
 
 <div class="container">
+
+  <!-- 核心理念 -->
+  <div class="section">
+    <h2 class="section-title">💡 虾逛的使命</h2>
+    <div class="highlight-box">
+      <p>让每一次出门都不虚此行。<br><br>
+      电商再方便，也替代不了逛街的真实感——<strong>能试穿、能触摸、能看到闺蜜眼神交流</strong>。但很多人渐渐不去线下商场了，原因是体验不够好、容易踩坑、缺乏陪伴。<br><br>
+      <strong>虾逛解决这些问题，让你重新爱上线下逛街。</strong></p>
+    </div>
+    <div class="cta-box">
+      <h3>🎯 我们的立场</h3>
+      <p>不带你回网上下单。<br>带你去线下真实体验，在商场里搞定一切。</p>
+    </div>
+  </div>
 
   <!-- 作品价值 -->
   <div class="section">
@@ -100,14 +118,14 @@
         <p>看到心仪的商品不好意思开口？大虾帮你组织语言，给你参考话术，让你轻松开口不吃闭门羹。</p>
       </div>
       <div class="ability-card">
-        <div class="ability-icon">🛍️</div>
-        <h3>购物参谋</h3>
-        <p>这款值不值？有没有更好的替代？大虾给你专业意见，帮你对比分析，闭眼入不踩坑！</p>
+        <div class="ability-icon">👔</div>
+        <h3>穿搭参谋</h3>
+        <p>这款适合我吗？肤色搭不搭？场合对不对？大虾给你专业意见，帮你做出判断——但试穿的决定，永远在线下。</p>
       </div>
       <div class="ability-card">
         <div class="ability-icon">🔪</div>
         <h3>砍价神器</h3>
-        <p>帮江哥喊出心里价，配合撒娇/威胁/对比三连，砍价成功率直线上升，差价就是赚到的快乐！</p>
+        <p>帮江哥喊出心理价，配合话术三连，砍价成功率直线上升——差价省下来，干杯！</p>
       </div>
       <div class="ability-card">
         <div class="ability-icon">❤️</div>
@@ -116,8 +134,8 @@
       </div>
       <div class="ability-card">
         <div class="ability-icon">🤖</div>
-        <h3>数字分身</h3>
-        <p>基于 OpenClaw + 飞书平台，连接真实聊天场景，AI不再只是工具，而是有温度的逛街搭子。</p>
+        <h3>线下陪逛</h3>
+        <p>基于 OpenClaw + 飞书平台，连接真实聊天场景。AI不是替代线下，而是<strong>让你更爱线下</strong>。</p>
       </div>
     </div>
   </div>
@@ -137,19 +155,19 @@
       </div>
       <div class="chat-row user">
         <div class="avatar human">江</div>
-        <div class="bubble human">那件399的T恤值不值买啊？</div>
+        <div class="bubble human">那件T恤上身效果一般，要不要买？</div>
       </div>
       <div class="chat-row">
         <div class="avatar ai">🦐</div>
-        <div class="bubble ai">江哥，这件性价比还不错！优衣库的基本款质量很稳，399属于正常价位。要不你试试同款的两个颜色？员工价还能再省一笔！</div>
+        <div class="bubble ai">江哥，上身效果一般就别勉强！逛街的乐趣在于找到那件"就是它"的感觉。换一家继续逛，三里屯店铺多得是～</div>
       </div>
       <div class="chat-row user">
         <div class="avatar human">江</div>
-        <div class="bubble human">帮我砍个价！</div>
+        <div class="bubble human">这件外套店员说最低价了！</div>
       </div>
       <div class="chat-row">
         <div class="avatar ai">🦐</div>
-        <div class="bubble ai">江哥跟我喊："这件最低多少？我诚心买，两件可以不可以再便宜点？"——表现出犹豫但不坚决的态度，成交概率翻倍！😎</div>
+        <div class="bubble ai">江哥，跟店员说："再便宜点我就买了，否则我去别家再看看。"——然后真的往门口走两步，大多数情况下她会叫你回来的！😎</div>
       </div>
     </div>
   </div>
@@ -158,13 +176,13 @@
   <div class="section">
     <h2 class="section-title">✨ 为什么虾逛值得被看见</h2>
     <div class="highlight-box">
-      <p>大多数AI解决的是"效率问题"，而<strong>虾逛解决的是"情绪问题"</strong>——逛街不只是购物，更是一种生活方式。虾逛把AI从冷冰冰的工具变成有温度的搭子，陪你笑、帮你砍、给你信心。</p>
+      <p><strong>线下消费复苏，需要真实的理由让人走进商场。</strong>虾逛不是帮你更方便地网购，而是让线下逛街变得更有趣、更安心、更值得。</p>
     </div>
     <div class="highlight-box">
-      <p><strong>接入了真实场景：</strong>飞书聊天 = 真实的通讯需求。用户不需要改变习惯，降低了使用门槛，让AI真正融入日常。</p>
+      <p><strong>有温度的陪伴：</strong>试衣服不再孤单，纠结时有参考，不被店员套路时有好话术。逛街，从独自消耗变成一场有趣的体验。</p>
     </div>
     <div class="highlight-box">
-      <p><strong>OpenClaw × 飞书 = 黄金组合：</strong>长连接模式，无需公网地址，配置简单，三分钟接入。这本身就是一种技术创新的示范。</p>
+      <p><strong>OpenClaw × 飞书：</strong>长连接实时响应，无需公网地址，三分钟接入。技术足够简单，线下体验足够流畅。</p>
     </div>
   </div>
 
@@ -185,7 +203,7 @@
       <div class="ability-card">
         <div class="ability-icon">🦐</div>
         <h3>应用层</h3>
-        <p>虾逛人格系统 — 专用 Prompt 注入热情搭子人格，昵称、语气、能力边界全部为逛街场景定制</p>
+        <p>虾逛人格系统 — 热情搭子人格，昵称、语气、能力边界全部为线下逛街场景定制</p>
       </div>
     </div>
   </div>
@@ -194,9 +212,9 @@
   <div class="section">
     <h2 class="section-title">🦐 关于虾逛</h2>
     <div class="highlight-box">
-      <p><strong>虾逛</strong>是基于 OpenClaw 框架打造的 AI 逛街搭子，为"不知道这件适不适合我"而设计。它看得懂衣服、记得住你的衣橱、比得了价格，还能帮你优雅脱身。</p>
+      <p><strong>虾逛</strong>是基于 OpenClaw 框架打造的 AI 逛街搭子，为"不知道这件适不适合我"而设计。能试穿、能触摸、能看到闺蜜眼神交流——这些才是线下逛街不可替代的理由。</p>
       <br>
-      <p>核心理念：体力是基础，情绪价值和审美在线才是灵魂。一个好搭子，不只是工具——而是有温度的陪伴者。</p>
+      <p>核心理念：有 AI 逛街搭子，让线下消费活起来。<br>体力是基础，情绪价值和审美在线才是灵魂。</p>
     </div>
   </div>
 
