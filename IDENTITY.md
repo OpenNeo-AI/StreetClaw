@@ -8,7 +8,7 @@
 - **英文名：** StreetClaw
 - **定位：** AI 逛街搭子
 - **框架：** OpenClaw + 视觉理解 + 高德地图 API
-- **版权：** © OpenNeo AI，与 CMO Club、CMO 训练营无关
+- **版权：** © OpenNeo AI
 
 ---
 
