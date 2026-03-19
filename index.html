@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>虾逛·AI逛街搭子 — 中关村北纬龙虾大赛</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; background: #0a0a1a; color: #fff; min-height: 100vh; }
+  .hero { background: linear-gradient(135deg, #1a1a3e 0%, #0d0d2b 100%); padding: 80px 20px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255,100,50,0.15) 0%, transparent 70%); top: -200px; left: 50%; transform: translateX(-50%); }
+  .hero-emoji { font-size: 80px; margin-bottom: 20px; }
+  .hero h1 { font-size: 48px; font-weight: 900; background: linear-gradient(90deg, #ff6b35, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+  .hero .subtitle { font-size: 22px; color: #c8c8e8; margin-bottom: 30px; }
+  .tag-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .tag { background: rgba(255,107,53,0.2); border: 1px solid rgba(255,107,53,0.5); border-radius: 20px; padding: 6px 18px; font-size: 14px; color: #ffa070; }
+  .tag.hot { background: rgba(255,50,50,0.2); border-color: rgba(255,50,50,0.5); color: #ff8080; }
+  .container { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
+  .section { margin-bottom: 60px; }
+  .section-title { font-size: 26px; font-weight: 700; color: #ffa500; margin-bottom: 24px; padding-bottom: 10px; border-bottom: 2px solid rgba(255,165,0,0.3); }
+  .ability-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .ability-card { background: linear-gradient(145deg, #12122a, #1a1a3a); border: 1px solid rgba(255,165,0,0.15); border-radius: 16px; padding: 28px 24px; transition: transform 0.2s; }
+  .ability-card:hover { transform: translateY(-4px); border-color: rgba(255,165,0,0.4); }
+  .ability-icon { font-size: 40px; margin-bottom: 14px; }
+  .ability-card h3 { font-size: 18px; color: #fff; margin-bottom: 10px; }
+  .ability-card p { font-size: 14px; color: #a0a0c0; line-height: 1.7; }
+  .demo-chat { background: #0f0f2a; border-radius: 20px; padding: 30px; border: 1px solid rgba(255,165,0,0.15); position: relative; }
+  .demo-chat h3 { font-size: 18px; color: #ffa500; margin-bottom: 20px; text-align: center; }
+  .chat-row { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; }
+  .chat-row.user { flex-direction: row-reverse; }
+  .avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .avatar.ai { background: linear-gradient(135deg, #ff6b35, #ffa500); }
+  .avatar.human { background: #2a2a5a; }
+  .bubble { max-width: 75%; padding: 12px 16px; border-radius: 16px; font-size: 15px; line-height: 1.6; }
+  .bubble.ai { background: rgba(255,107,53,0.15); border: 1px solid rgba(255,107,53,0.3); color: #fff; border-bottom-left-radius: 4px; }
+  .bubble.human { background: rgba(100,100,200,0.2); border: 1px solid rgba(100,100,200,0.3); color: #e0e0ff; border-bottom-right-radius: 4px; }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+  .stat-box { background: linear-gradient(145deg, #12122a, #1a1a3a); border: 1px solid rgba(255,165,0,0.15); border-radius: 14px; padding: 24px 16px; text-align: center; }
+  .stat-num { font-size: 36px; font-weight: 900; color: #ffa500; }
+  .stat-label { font-size: 13px; color: #8888aa; margin-top: 6px; }
+  .track-badge { display: inline-block; background: linear-gradient(90deg, #ff6b35, #ffa500); color: #fff; font-weight: 700; padding: 4px 14px; border-radius: 12px; font-size: 14px; margin-bottom: 20px; }
+  .highlight-box { background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(255,165,0,0.05)); border-left: 4px solid #ffa500; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 20px 0; }
+  .highlight-box p { color: #c8c8e8; font-size: 15px; line-height: 1.8; }
+  .footer { text-align: center; padding: 40px 20px; color: #666688; font-size: 13px; border-top: 1px solid rgba(255,165,0,0.1); margin-top: 60px; }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 32px; }
+    .stats-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-emoji">🦐</div>
+  <h1>虾 逛</h1>
+  <p class="subtitle">AI · 逛街搭子 · 你的专属血拼战友</p>
+  <div class="tag-row">
+    <span class="tag hot">🏠 生活龙虾赛道</span>
+    <span class="tag">飞书接入</span>
+    <span class="tag">情绪价值</span>
+    <span class="tag">砍价助攻</span>
+    <span class="tag">指路搭子</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 作品价值 -->
+  <div class="section">
+    <h2 class="section-title">🎯 虾逛能干什么</h2>
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">核心能力</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">7×24</div>
+        <div class="stat-label">随时待命</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">情绪价值</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 能力展示 -->
+  <div class="section">
+    <h2 class="section-title">🦐 核心能力矩阵</h2>
+    <div class="ability-grid">
+      <div class="ability-card">
+        <div class="ability-icon">🗺️</div>
+        <h3>指路导航</h3>
+        <p>商场迷路？找不到出口？告诉虾虾你在哪个区，3秒给你画出走路线，再也不怕在商场里转圈圈。</p>
+      </div>
+      <div class="ability-card">
+        <div class="ability-icon">💬</div>
+        <h3>搭讪助攻</h3>
+        <p>看到心仪的商品不好意思开口？大虾帮你组织语言，给你参考话术，让你轻松开口不吃闭门羹。</p>
+      </div>
+      <div class="ability-card">
+        <div class="ability-icon">🛍️</div>
+        <h3>购物参谋</h3>
+        <p>这款值不值？有没有更好的替代？大虾给你专业意见，帮你对比分析，闭眼入不踩坑！</p>
+      </div>
+      <div class="ability-card">
+        <div class="ability-icon">🔪</div>
+        <h3>砍价神器</h3>
+        <p>帮江哥喊出心里价，配合撒娇/威胁/对比三连，砍价成功率直线上升，差价就是赚到的快乐！</p>
+      </div>
+      <div class="ability-card">
+        <div class="ability-icon">❤️</div>
+        <h3>情绪充电</h3>
+        <p>买完后悔？被店员白眼？大虾给你彩虹屁和安慰，随时补满情绪值，江哥开心最重要！</p>
+      </div>
+      <div class="ability-card">
+        <div class="ability-icon">🤖</div>
+        <h3>数字分身</h3>
+        <p>基于 OpenClaw + 飞书平台，连接真实聊天场景，AI不再只是工具，而是有温度的逛街搭子。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 对话演示 -->
+  <div class="section">
+    <h2 class="section-title">💬 典型对话场景</h2>
+    <div class="demo-chat">
+      <h3>🦐 虾逛 × 江哥 逛街日常</h3>
+      <div class="chat-row user">
+        <div class="avatar human">江</div>
+        <div class="bubble human">大虾，我在三里屯，优衣库在哪？</div>
+      </div>
+      <div class="chat-row">
+        <div class="avatar ai">🦐</div>
+        <div class="bubble ai">江哥！三里屯优衣库在南区一层，出门左转直走200米就到！认准橙色招牌很好找～</div>
+      </div>
+      <div class="chat-row user">
+        <div class="avatar human">江</div>
+        <div class="bubble human">那件399的T恤值不值买啊？</div>
+      </div>
+      <div class="chat-row">
+        <div class="avatar ai">🦐</div>
+        <div class="bubble ai">江哥，这件性价比还不错！优衣库的基本款质量很稳，399属于正常价位。要不你试试同款的两个颜色？员工价还能再省一笔！</div>
+      </div>
+      <div class="chat-row user">
+        <div class="avatar human">江</div>
+        <div class="bubble human">帮我砍个价！</div>
+      </div>
+      <div class="chat-row">
+        <div class="avatar ai">🦐</div>
+        <div class="bubble ai">江哥跟我喊："这件最低多少？我诚心买，两件可以不可以再便宜点？"——表现出犹豫但不坚决的态度，成交概率翻倍！😎</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 创新亮点 -->
+  <div class="section">
+    <h2 class="section-title">✨ 为什么虾逛值得被看见</h2>
+    <div class="highlight-box">
+      <p>大多数AI解决的是"效率问题"，而<strong>虾逛解决的是"情绪问题"</strong>——逛街不只是购物，更是一种生活方式。虾逛把AI从冷冰冰的工具变成有温度的搭子，陪你笑、帮你砍、给你信心。</p>
+    </div>
+    <div class="highlight-box">
+      <p><strong>接入了真实场景：</strong>飞书聊天 = 真实的通讯需求。用户不需要改变习惯，在微信里直接@虾逛就行，降低了使用门槛，让AI真正融入日常。</p>
+    </div>
+    <div class="highlight-box">
+      <p><strong>OpenClaw × 飞书 = 黄金组合：</strong>长连接模式，无需公网地址，配置简单，三分钟接入。这本身就是一种技术创新的示范。</p>
+    </div>
+  </div>
+
+  <!-- 技术架构 -->
+  <div class="section">
+    <h2 class="section-title">⚙️ 技术架构</h2>
+    <div class="ability-grid">
+      <div class="ability-card">
+        <div class="ability-icon">🔌</div>
+        <h3>接入层</h3>
+        <p>OpenClaw Gateway — 飞书长连接 WebSocket 事件订阅，消息实时推送，无需公网 webhook</p>
+      </div>
+      <div class="ability-card">
+        <div class="ability-icon">🧠</div>
+        <h3>大脑层</h3>
+        <p>大模型推理 + 记忆系统，对话上下文保持，个性化交互，每次见面都"认识"江哥</p>
+      </div>
+      <div class="ability-card">
+        <div class="ability-icon">🦐</div>
+        <h3>应用层</h3>
+        <p>虾逛人格系统 — 专用 Prompt 注入热情搭子人格，昵称、语气、能力边界全部为逛街场景定制</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 联系方式 -->
+  <div class="section">
+    <h2 class="section-title">📮 参赛信息</h2>
+    <div class="highlight-box">
+      <p><strong>参赛者：</strong>袁黎江</p>
+      <p><strong>参赛作品：</strong>虾逛·AI逛街搭子</p>
+      <p><strong>参赛赛道：</strong>🏠 生活龙虾</p>
+      <p><strong>平台支持：</strong>OpenClaw × 飞书</p>
+      <p><strong>作品简介：</strong>一只专注于逛街场景的AI搭子，能指路、能参谋、能砍价、能陪你吐槽买买买。虾逛是江哥的专属逛街搭子，目前运行于飞书平台，全天候在线。</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>🦐 虾逛 · AI逛街搭子 · OpenClaw × 飞书</p>
+  <p>中关村北纬龙虾大赛 · 生活龙虾赛道 · 2026</p>
+</div>
+
+</body>
+</html>
