@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>虾逛·AI逛街搭子 — 中关村北纬龙虾大赛</title>
+<title>虾逛·AI逛街搭子</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; background: #0a0a1a; color: #fff; min-height: 100vh; }
@@ -14,7 +14,6 @@
   .hero .subtitle { font-size: 22px; color: #c8c8e8; margin-bottom: 30px; }
   .tag-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .tag { background: rgba(255,107,53,0.2); border: 1px solid rgba(255,107,53,0.5); border-radius: 20px; padding: 6px 18px; font-size: 14px; color: #ffa070; }
-  .tag.hot { background: rgba(255,50,50,0.2); border-color: rgba(255,50,50,0.5); color: #ff8080; }
   .container { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
   .section { margin-bottom: 60px; }
   .section-title { font-size: 26px; font-weight: 700; color: #ffa500; margin-bottom: 24px; padding-bottom: 10px; border-bottom: 2px solid rgba(255,165,0,0.3); }
@@ -38,7 +37,6 @@
   .stat-box { background: linear-gradient(145deg, #12122a, #1a1a3a); border: 1px solid rgba(255,165,0,0.15); border-radius: 14px; padding: 24px 16px; text-align: center; }
   .stat-num { font-size: 36px; font-weight: 900; color: #ffa500; }
   .stat-label { font-size: 13px; color: #8888aa; margin-top: 6px; }
-  .track-badge { display: inline-block; background: linear-gradient(90deg, #ff6b35, #ffa500); color: #fff; font-weight: 700; padding: 4px 14px; border-radius: 12px; font-size: 14px; margin-bottom: 20px; }
   .highlight-box { background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(255,165,0,0.05)); border-left: 4px solid #ffa500; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 20px 0; }
   .highlight-box p { color: #c8c8e8; font-size: 15px; line-height: 1.8; }
   .footer { text-align: center; padding: 40px 20px; color: #666688; font-size: 13px; border-top: 1px solid rgba(255,165,0,0.1); margin-top: 60px; }
@@ -55,11 +53,11 @@
   <h1>虾 逛</h1>
   <p class="subtitle">AI · 逛街搭子 · 你的专属血拼战友</p>
   <div class="tag-row">
-    <span class="tag hot">🏠 生活龙虾赛道</span>
     <span class="tag">飞书接入</span>
     <span class="tag">情绪价值</span>
     <span class="tag">砍价助攻</span>
     <span class="tag">指路搭子</span>
+    <span class="tag">购物参谋</span>
   </div>
   <div style="margin-top:28px;">
     <img src="assets/poster-competition.png" alt="虾逛宣传海报" style="max-width:360px;width:100%;border-radius:16px;border:2px solid rgba(255,165,0,0.4);box-shadow:0 8px 32px rgba(0,0,0,0.6);" />
@@ -163,7 +161,7 @@
       <p>大多数AI解决的是"效率问题"，而<strong>虾逛解决的是"情绪问题"</strong>——逛街不只是购物，更是一种生活方式。虾逛把AI从冷冰冰的工具变成有温度的搭子，陪你笑、帮你砍、给你信心。</p>
     </div>
     <div class="highlight-box">
-      <p><strong>接入了真实场景：</strong>飞书聊天 = 真实的通讯需求。用户不需要改变习惯，在微信里直接@虾逛就行，降低了使用门槛，让AI真正融入日常。</p>
+      <p><strong>接入了真实场景：</strong>飞书聊天 = 真实的通讯需求。用户不需要改变习惯，降低了使用门槛，让AI真正融入日常。</p>
     </div>
     <div class="highlight-box">
       <p><strong>OpenClaw × 飞书 = 黄金组合：</strong>长连接模式，无需公网地址，配置简单，三分钟接入。这本身就是一种技术创新的示范。</p>
@@ -192,15 +190,13 @@
     </div>
   </div>
 
-  <!-- 联系方式 -->
+  <!-- 关于虾逛 -->
   <div class="section">
-    <h2 class="section-title">📮 参赛信息</h2>
+    <h2 class="section-title">🦐 关于虾逛</h2>
     <div class="highlight-box">
-      <p><strong>参赛者：</strong>袁黎江</p>
-      <p><strong>参赛作品：</strong>虾逛·AI逛街搭子</p>
-      <p><strong>参赛赛道：</strong>🏠 生活龙虾</p>
-      <p><strong>平台支持：</strong>OpenClaw × 飞书</p>
-      <p><strong>作品简介：</strong>一只专注于逛街场景的AI搭子，能指路、能参谋、能砍价、能陪你吐槽买买买。虾逛是江哥的专属逛街搭子，目前运行于飞书平台，全天候在线。</p>
+      <p><strong>虾逛</strong>是基于 OpenClaw 框架打造的 AI 逛街搭子，为"不知道这件适不适合我"而设计。它看得懂衣服、记得住你的衣橱、比得了价格，还能帮你优雅脱身。</p>
+      <br>
+      <p>核心理念：体力是基础，情绪价值和审美在线才是灵魂。一个好搭子，不只是工具——而是有温度的陪伴者。</p>
     </div>
   </div>
 
@@ -208,7 +204,6 @@
 
 <div class="footer">
   <p>🦐 虾逛 · AI逛街搭子 · OpenClaw × 飞书</p>
-  <p>中关村北纬龙虾大赛 · 生活龙虾赛道 · 2026</p>
 </div>
 
 </body>
